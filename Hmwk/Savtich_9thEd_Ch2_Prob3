@@ -1,0 +1,45 @@
+/* 
+ * File: main.cpp
+ * Author:Andy Ly
+ * Created on January 13, 2015, 8:49 PM
+ */
+
+//System Libraries
+#include <iostream>
+using namespace std;
+
+//User Libraries
+
+//Global Constants
+const int CNVHRMN=60;//Conversion from Hrs to Min
+const int CNVMNSC=60;//Conversion from Min to Sec
+
+//Function Prototypes
+
+//Execution Begins Here!
+int main(int argc, char** argv) {
+    //Declare variables
+    float mph;//Miles per hour on a treadmill
+    float hpm;//Pace as hours per mile
+    float fmpm;//Miles per minute as a float
+    int impm;//Miles per minute as an interger
+    float fmspm;//Fraction left for seconds per mile
+    //Prompt for the input
+    cout<<"How many miles are you running"<<endl;
+    cout<<"in an hour?"<<endl;
+    cout<<"Format asnwer as a float."<<endl;
+    cin>>mph;
+    //Calculate the relevant pace
+    hpm=1/mph;
+    fmpm=hpm*CNVHRMN;
+    impm=static_cast<int>(fmpm);
+    fmpm=(fmpm-impm)*CNVMNSC;
+    //Output the result
+    cout<<mph<<"=";
+    cout<<impm<<"(mins) ";
+    cout<<fmspm<<"(secs)"<<endl;
+    //Exit stage right
+    
+    return 0;
+}
+
